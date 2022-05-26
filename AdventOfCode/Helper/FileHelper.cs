@@ -5,51 +5,51 @@ using System.Reflection;
 namespace AdventOfCode.Helper
 {
     public static class FileHelper
-	{
+    {
 
-		/*
+        /*
 		 *	Input File Format
 		 *	i.e.	
 		 *		101
 		 *		102
 		 *		103
 		*/
-		public static List<int> GetNumListFromFile(string resourcePath)
-		{
-			List<int> nums = new List<int>();
-
-			using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourcePath))
-			{
-				using (StreamReader reader = new StreamReader(stream))
-				{
-					string line;
-					while ((line = reader.ReadLine()) != null)
-					{
-						int res = int.Parse(line);
-						nums.Add(res);
-					}
-				}
-			}
-
-			return nums;
-        }
-
-		public static List<string> GetLinesFromFile(string resourcePath)
+        public static List<int> GetNumListFromFile(string resourcePath)
         {
-			List<string> lines = new List<string>();
+            List<int> nums = new List<int>();
 
-			using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourcePath))
+            using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourcePath))
             {
-				using (StreamReader reader = new StreamReader(stream))
+                using (StreamReader reader = new StreamReader(stream))
                 {
-					string line;
-					while ((line = reader.ReadLine()) != null)
-						lines.Add(line);
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        int res = int.Parse(line);
+                        nums.Add(res);
+                    }
                 }
             }
 
-			return lines;
+            return nums;
         }
-	}
+
+        public static List<string> GetLinesFromFile(string resourcePath)
+        {
+            List<string> lines = new List<string>();
+
+            using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourcePath))
+            {
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                        lines.Add(line);
+                }
+            }
+
+            return lines;
+        }
+    }
 }
 

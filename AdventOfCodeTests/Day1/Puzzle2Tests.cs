@@ -5,8 +5,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AdventOfCodeTests.Day1
 {
     [TestClass]
-	public class Puzzle2Tests
-	{
+    public class Puzzle2Tests
+    {
         [TestMethod]
         public void GetIncreasingMeasurementCount_WithValidMeasurements_ReturnsCount()
         {

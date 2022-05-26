@@ -4,8 +4,8 @@ using AdventOfCode.Helper;
 
 namespace AdventOfCode.Day1
 {
-	public static class Day1Controller
-	{
+    public static class Day1Controller
+    {
         public static void Day1Puzzle1()
         {
             try

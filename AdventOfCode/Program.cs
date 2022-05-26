@@ -14,7 +14,7 @@ namespace AdventOfCode
             Console.Write(Constants.ENTER_PUZZLE_NUMBER_PROMPT);
             string puzzleNumber = Console.ReadLine();
 
-            switch(day)
+            switch (day)
             {
                 case Constants.ONE:
                     if (puzzleNumber.Equals(Constants.ONE))
