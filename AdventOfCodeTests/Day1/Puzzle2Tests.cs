@@ -1,17 +1,17 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Collections.Generic;
 using AdventOfCode.Day1;
-using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AdventOfCodeTests.Day1
 {
     [TestClass]
-    public class Puzzle1Tests
-    {
+	public class Puzzle2Tests
+	{
         [TestMethod]
-        public void GetIncreasingDepthMeasurementsCount_WithValidDepths_ReturnsCount()
+        public void GetIncreasingMeasurementCount_WithValidMeasurements_ReturnsCount()
         {
             // Arrange
-            int expected = 7;
+            int expected = 5;
             List<int> depths = new List<int>();
             depths.Add(199);
             depths.Add(200);
@@ -25,8 +25,8 @@ namespace AdventOfCodeTests.Day1
             depths.Add(263);
 
             // Act
-            Puzzle1 puzzle1 = new Puzzle1(depths);
-            int actual = puzzle1.GetIncreasingDepthMeasurementsCount();
+            Puzzle2 puzzle2 = new Puzzle2(depths);
+            int actual = puzzle2.GetIncreasingMeasurementCount();
 
             // Assert
             Assert.AreEqual(expected, actual);

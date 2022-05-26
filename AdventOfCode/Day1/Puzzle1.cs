@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
 
-namespace AdventOfCode
+namespace AdventOfCode.Day1
 {
-	public class Puzzle1
+    public class Puzzle1
 	{
 		private List<int> depthMeasurements;
 		
