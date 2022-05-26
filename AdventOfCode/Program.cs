@@ -27,6 +27,8 @@ namespace AdventOfCode
                 case Constants.TWO:
                     if (puzzleNumber.Equals(Constants.ONE))
                         Day2Controller.Day2Puzzle1();
+                    else if (puzzleNumber.Equals(Constants.TWO))
+                        Day2Controller.Day2Puzzle2();
                     else
                         PrintInvalidInputErrorMessage();
                     break;
