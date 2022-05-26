@@ -10,13 +10,22 @@
     <None Remove="Resources\" />
     <None Remove="Resources\depthMeasurements.txt" />
     <None Remove="Helper\" />
+    <None Remove="Day2\" />
+    <None Remove="Resources\navigationData.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Day1\" />
     <Folder Include="Resources\" />
     <Folder Include="Helper\" />
+    <Folder Include="Day2\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\depthMeasurements.txt" />
+    <EmbeddedResource Include="Resources\navigation.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Helper\FileHelper.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
 </Project>

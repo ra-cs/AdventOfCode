@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using AdventOfCode.Helper;
+using AdventOfCode.Day1;
+using AdventOfCode.Day2;
 
 namespace AdventOfCode
 {
@@ -18,9 +18,15 @@ namespace AdventOfCode
             {
                 case Constants.ONE:
                     if (puzzleNumber.Equals(Constants.ONE))
-                        Day1Puzzle1();
+                        Day1Controller.Day1Puzzle1();
                     else if (puzzleNumber.Equals(Constants.TWO))
-                        Day1Puzzle2();
+                        Day1Controller.Day1Puzzle2();
+                    else
+                        PrintInvalidInputErrorMessage();
+                    break;
+                case Constants.TWO:
+                    if (puzzleNumber.Equals(Constants.ONE))
+                        Day2Controller.Day2Puzzle1();
                     else
                         PrintInvalidInputErrorMessage();
                     break;
@@ -29,36 +35,6 @@ namespace AdventOfCode
                     break;
             }
 
-        }
-
-        static void Day1Puzzle1()
-        {
-            try
-            {
-                List<int> numList = FileHelper.GetNumListFromFile(Constants.DEPTH_MEASUREMENTS_FILE_PATH);
-                Puzzle1 puzzle1 = new Puzzle1(numList);
-                int increasingDepthCount = puzzle1.GetIncreasingDepthMeasurementsCount();
-                Console.WriteLine(increasingDepthCount);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-
-        static void Day1Puzzle2()
-        {
-            try
-            {
-                List<int> numList = FileHelper.GetNumListFromFile(Constants.DEPTH_MEASUREMENTS_FILE_PATH);
-                Puzzle2 puzzle2 = new Puzzle2(numList);
-                int increasingMeasurementCount = puzzle2.GetIncreasingMeasurementCount();
-                Console.WriteLine(increasingMeasurementCount);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
         }
 
         static void PrintInvalidInputErrorMessage()

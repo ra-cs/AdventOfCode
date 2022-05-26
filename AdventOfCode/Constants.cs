@@ -1,7 +1,6 @@
-﻿using System;
-namespace AdventOfCode
+﻿namespace AdventOfCode
 {
-	public static class Constants
+    public static class Constants
 	{
 		public const string ENTER_DAY_PROMPT = "Enter Day: ";
 		public const string ENTER_PUZZLE_NUMBER_PROMPT = "Enter puzzle number: ";
@@ -9,6 +8,7 @@ namespace AdventOfCode
 		public const string TWO = "2";
 		public const string INVALID_INPUT_MESSAGE = "ERROR: Invalid day or puzzle number entered.";
 		public const string DEPTH_MEASUREMENTS_FILE_PATH = "AdventOfCode.Resources.depthMeasurements.txt";
+		public const string NAVIGATION_FILE_PATH = "AdventOfCode.Resources.navigation.txt";
 	}
 }
 

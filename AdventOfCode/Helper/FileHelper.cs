@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
 namespace AdventOfCode.Helper
 {
-	public static class FileHelper
+    public static class FileHelper
 	{
 
 		/*
@@ -33,6 +32,23 @@ namespace AdventOfCode.Helper
 			}
 
 			return nums;
+        }
+
+		public static List<string> GetLinesFromFile(string resourcePath)
+        {
+			List<string> lines = new List<string>();
+
+			using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourcePath))
+            {
+				using (StreamReader reader = new StreamReader(stream))
+                {
+					string line;
+					while ((line = reader.ReadLine()) != null)
+						lines.Add(line);
+                }
+            }
+
+			return lines;
         }
 	}
 }
