@@ -16,15 +16,13 @@ namespace AdventOfCode
 
             switch(day)
             {
-                case Constants.PUZZLE_NUMBER_ONE:
-                    if (puzzleNumber.Equals(Constants.PUZZLE_NUMBER_ONE))
-                    {
+                case Constants.ONE:
+                    if (puzzleNumber.Equals(Constants.ONE))
                         Day1Puzzle1();
-                    }
+                    else if (puzzleNumber.Equals(Constants.TWO))
+                        Day1Puzzle2();
                     else
-                    {
                         PrintInvalidInputErrorMessage();
-                    }
                     break;
                 default:
                     PrintInvalidInputErrorMessage();
@@ -41,6 +39,21 @@ namespace AdventOfCode
                 Puzzle1 puzzle1 = new Puzzle1(numList);
                 int increasingDepthCount = puzzle1.GetIncreasingDepthMeasurementsCount();
                 Console.WriteLine(increasingDepthCount);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        static void Day1Puzzle2()
+        {
+            try
+            {
+                List<int> numList = FileHelper.GetNumListFromFile(Constants.DEPTH_MEASUREMENTS_FILE_PATH);
+                Puzzle2 puzzle2 = new Puzzle2(numList);
+                int increasingMeasurementCount = puzzle2.GetIncreasingMeasurementCount();
+                Console.WriteLine(increasingMeasurementCount);
             }
             catch (Exception ex)
             {
