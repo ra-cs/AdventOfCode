@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using AdventOfCode.Helper;
-
-namespace AdventOfCode.Day1
+﻿namespace AdventOfCode.Day1
 {
+    using System;
+    using System.Collections.Generic;
+    using AdventOfCode.Helper;
+
     public static class Day1Controller
     {
         public static void Day1Puzzle1()
@@ -37,4 +37,3 @@ namespace AdventOfCode.Day1
         }
     }
 }
-

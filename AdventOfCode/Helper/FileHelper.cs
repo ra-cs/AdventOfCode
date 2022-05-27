@@ -1,19 +1,19 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-
-namespace AdventOfCode.Helper
+﻿namespace AdventOfCode.Helper
 {
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Reflection;
+
     public static class FileHelper
     {
 
         /*
-		 *	Input File Format
-		 *	i.e.	
-		 *		101
-		 *		102
-		 *		103
-		*/
+             *	Input File Format
+             *	i.e.	
+             *		101
+             *		102
+             *		103
+            */
         public static List<int> GetNumListFromFile(string resourcePath)
         {
             List<int> nums = new List<int>();
@@ -44,7 +44,9 @@ namespace AdventOfCode.Helper
                 {
                     string line;
                     while ((line = reader.ReadLine()) != null)
+                    {
                         lines.Add(line);
+                    }
                 }
             }
 
@@ -52,4 +54,3 @@ namespace AdventOfCode.Helper
         }
     }
 }
-

@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
-using AdventOfCode.Day2;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace AdventOfCodeTests.Day2
+﻿namespace AdventOfCodeTests.Day2
 {
+    using System.Collections.Generic;
+    using AdventOfCode.Day2;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+
     [TestClass]
     public class Puzzle2Tests
     {
@@ -12,13 +13,15 @@ namespace AdventOfCodeTests.Day2
         {
             // Arrange
             int expected = 900;
-            List<string> commandsAndAmount = new List<string>();
-            commandsAndAmount.Add("forward 5");
-            commandsAndAmount.Add("down 5");
-            commandsAndAmount.Add("forward 8");
-            commandsAndAmount.Add("up 3");
-            commandsAndAmount.Add("down 8");
-            commandsAndAmount.Add("forward 2");
+            List<string> commandsAndAmount = new List<string>()
+            {
+                "forward 5",
+                "down 5",
+                "forward 8",
+                "up 3",
+                "down 8",
+                "forward 2"
+            };
 
             // Act
             Puzzle2 puzzle2 = new Puzzle2(commandsAndAmount);
@@ -29,4 +32,3 @@ namespace AdventOfCodeTests.Day2
         }
     }
 }
-

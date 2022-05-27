@@ -12,16 +12,20 @@
     <None Remove="Helper\" />
     <None Remove="Day2\" />
     <None Remove="Resources\navigationData.txt" />
+    <None Remove="Day3\" />
+    <None Remove="Resources\binaryDiagnostics.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Day1\" />
     <Folder Include="Resources\" />
     <Folder Include="Helper\" />
     <Folder Include="Day2\" />
+    <Folder Include="Day3\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\depthMeasurements.txt" />
     <EmbeddedResource Include="Resources\navigation.txt" />
+    <EmbeddedResource Include="Resources\binaryDiagnostics.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Helper\FileHelper.cs">

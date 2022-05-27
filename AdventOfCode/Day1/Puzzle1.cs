@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace AdventOfCode.Day1
+﻿namespace AdventOfCode.Day1
 {
+    using System.Collections.Generic;
+
     public class Puzzle1
     {
-        private List<int> depthMeasurements;
+        private readonly List<int> depthMeasurements;
 
-        public Puzzle1(List<int> depthMeasurements)
-        {
-            this.depthMeasurements = depthMeasurements;
-        }
+        public Puzzle1(List<int> depthMeasurements) => this.depthMeasurements = depthMeasurements;
 
         public int GetIncreasingDepthMeasurementsCount()
         {
-            Nullable<int> prev = null;
+            int? prev = null;
             int increasingCount = 0;
-            foreach (int depth in depthMeasurements)
+            foreach (int depth in this.depthMeasurements)
             {
                 if (prev == null)
                 {
@@ -25,7 +21,9 @@ namespace AdventOfCode.Day1
                 }
 
                 if (depth > prev)
+                {
                     increasingCount++;
+                }
 
                 prev = depth;
             }
@@ -35,4 +33,3 @@ namespace AdventOfCode.Day1
 
     }
 }
-

@@ -1,23 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace AdventOfCode.Day2
+﻿namespace AdventOfCode.Day2
 {
+    using System;
+    using System.Collections.Generic;
+
     public class Puzzle1
     {
-        private List<string> commandAndAmounts;
+        private readonly List<string> commandAndAmounts;
 
-        public Puzzle1(List<string> commandAndAmounts)
-        {
-            this.commandAndAmounts = commandAndAmounts;
-        }
+        public Puzzle1(List<string> commandAndAmounts) => this.commandAndAmounts = commandAndAmounts;
 
         public int CalculatePositionAndDepth()
         {
             int horizontalPosition = 0;
             int depth = 0;
 
-            foreach (string line in commandAndAmounts)
+            foreach (string line in this.commandAndAmounts)
             {
                 string[] commandAndAmount = line.Split(' ');
                 Enum.TryParse(commandAndAmount[0], out Commands command);
@@ -43,4 +40,3 @@ namespace AdventOfCode.Day2
         }
     }
 }
-

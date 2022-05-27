@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using AdventOfCode.Day1;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace AdventOfCodeTests.Day1
+﻿namespace AdventOfCodeTests.Day1
 {
+    using System.Collections.Generic;
+    using AdventOfCode.Day1;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class Puzzle2Tests
     {
@@ -12,17 +12,19 @@ namespace AdventOfCodeTests.Day1
         {
             // Arrange
             int expected = 5;
-            List<int> depths = new List<int>();
-            depths.Add(199);
-            depths.Add(200);
-            depths.Add(208);
-            depths.Add(210);
-            depths.Add(200);
-            depths.Add(207);
-            depths.Add(240);
-            depths.Add(269);
-            depths.Add(260);
-            depths.Add(263);
+            List<int> depths = new List<int>()
+            {
+                199,
+                200,
+                208,
+                210,
+                200,
+                207,
+                240,
+                269,
+                260,
+                263
+            };
 
             // Act
             Puzzle2 puzzle2 = new Puzzle2(depths);
@@ -33,4 +35,3 @@ namespace AdventOfCodeTests.Day1
         }
     }
 }
-
