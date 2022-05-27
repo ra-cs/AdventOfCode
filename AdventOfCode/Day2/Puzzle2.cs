@@ -1,43 +1,44 @@
-﻿namespace AdventOfCode.Day2;
-using System;
-using System.Collections.Generic;
-
-public class Puzzle2
+﻿namespace AdventOfCode.Day2
 {
-    private readonly List<string> commandAndAmounts;
+    using System;
+    using System.Collections.Generic;
 
-    public Puzzle2(List<string> commandAndAmounts) => this.commandAndAmounts = commandAndAmounts;
-
-    public int CalculateAccuratePositionAndDepth()
+    public class Puzzle2
     {
-        int horizontalPosition = 0;
-        int depth = 0;
-        int aim = 0;
+        private readonly List<string> commandAndAmounts;
 
-        foreach (string line in this.commandAndAmounts)
+        public Puzzle2(List<string> commandAndAmounts) => this.commandAndAmounts = commandAndAmounts;
+
+        public int CalculateAccuratePositionAndDepth()
         {
-            string[] commandAndAmount = line.Split(' ');
-            Enum.TryParse(commandAndAmount[0], out Commands command);
-            int amount = int.Parse(commandAndAmount[1]);
+            int horizontalPosition = 0;
+            int depth = 0;
+            int aim = 0;
 
-            switch (command)
+            foreach (string line in this.commandAndAmounts)
             {
-                case Commands.forward:
-                    horizontalPosition += amount;
-                    depth += aim * amount;
-                    break;
-                case Commands.up:
-                    aim -= amount;
-                    break;
-                case Commands.down:
-                    aim += amount;
-                    break;
-                default:
-                    break;
-            }
-        }
+                string[] commandAndAmount = line.Split(' ');
+                Enum.TryParse(commandAndAmount[0], out Commands command);
+                int amount = int.Parse(commandAndAmount[1]);
 
-        return horizontalPosition * depth;
+                switch (command)
+                {
+                    case Commands.forward:
+                        horizontalPosition += amount;
+                        depth += aim * amount;
+                        break;
+                    case Commands.up:
+                        aim -= amount;
+                        break;
+                    case Commands.down:
+                        aim += amount;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            return horizontalPosition * depth;
+        }
     }
 }
-

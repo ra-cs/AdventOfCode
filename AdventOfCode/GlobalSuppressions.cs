@@ -6,3 +6,5 @@
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "<Pending>", Scope = "member", Target = "~M:AdventOfCode.Program.Main(System.String[])")]
+[assembly: SuppressMessage("Style", "IDE0090:Use 'new(...)'", Justification = "<Pending>", Scope = "member", Target = "~M:AdventOfCode.Helper.FileHelper.GetNumListFromFile(System.String)~System.Collections.Generic.List{System.Int32}")]
+[assembly: SuppressMessage("Style", "IDE0090:Use 'new(...)'", Justification = "<Pending>", Scope = "member", Target = "~M:AdventOfCode.Helper.FileHelper.GetLinesFromFile(System.String)~System.Collections.Generic.List{System.String}")]

@@ -6,3 +6,4 @@
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Style", "IDE0007:Use implicit type", Justification = "<Pending>", Scope = "member", Target = "~M:AdventOfCodeTests.Day2.Puzzle1Tests.CalculatePositionAndDepth_WithValidInput_ReturnsProduct")]
+[assembly: SuppressMessage("Style", "IDE0090:Use 'new(...)'", Justification = "<Pending>", Scope = "member", Target = "~M:AdventOfCodeTests.Day1.Puzzle1Tests.GetIncreasingDepthMeasurementsCount_WithValidDepths_ReturnsCount")]

@@ -1,38 +1,39 @@
-﻿namespace AdventOfCode.Day1;
-
-using System.Collections.Generic;
-
-public class Puzzle2
+﻿namespace AdventOfCode.Day1
 {
-    private readonly List<int> depthMeasurements;
+    using System.Collections.Generic;
 
-    public Puzzle2(List<int> depthMeasurements) => this.depthMeasurements = depthMeasurements;
-
-    public int GetIncreasingMeasurementCount()
+    public class Puzzle2
     {
-        int increasingCount = 0;
-        int? prev = null;
+        private readonly List<int> depthMeasurements;
 
-        for (int i = 2; i < this.depthMeasurements.Count; i++)
+        public Puzzle2(List<int> depthMeasurements) => this.depthMeasurements = depthMeasurements;
+
+        public int GetIncreasingMeasurementCount()
         {
-            int currDepth = this.depthMeasurements[i - 2] +
-                            this.depthMeasurements[i - 1] +
-                            this.depthMeasurements[i];
+            int increasingCount = 0;
+            int? prev = null;
 
-            if (prev == null) {
-                prev = currDepth;
-                continue;
-            }
-
-            if (currDepth > prev)
+            for (int i = 2; i < this.depthMeasurements.Count; i++)
             {
-                increasingCount++;
+                int currDepth = this.depthMeasurements[i - 2] +
+                                this.depthMeasurements[i - 1] +
+                                this.depthMeasurements[i];
+
+                if (prev == null)
+                {
+                    prev = currDepth;
+                    continue;
+                }
+
+                if (currDepth > prev)
+                {
+                    increasingCount++;
+                }
+
+                prev = currDepth;
             }
 
-            prev = currDepth;
+            return increasingCount;
         }
-
-        return increasingCount;
     }
 }
-
