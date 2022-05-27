@@ -34,5 +34,18 @@
             }
         }
 
+        public static void Day3Puzzle2()
+        {
+            try
+            {
+                List<string> lines = FileHelper.GetLinesFromFile(Constants.BINARY_DIAGNOSTICS_FILE_PATH);
+                Puzzle2 puzzle2 = new Puzzle2(lines);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
     }
 }

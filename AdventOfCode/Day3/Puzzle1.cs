@@ -7,30 +7,30 @@
     public class Puzzle1
     {
         private readonly List<string> binaryDiagnostics;
+        private readonly int rowLength;
+        private readonly int columnLength;
 
-        public Puzzle1(List<string> binaryDiagnostics) => this.binaryDiagnostics = binaryDiagnostics;
+        public Puzzle1(List<string> binaryDiagnostics)
+        {
+            this.binaryDiagnostics = binaryDiagnostics;
+            this.rowLength = this.binaryDiagnostics.Count;
+            this.columnLength = this.binaryDiagnostics[0].Length;
+        }
 
         public int CalculatePowerConsumption()
         {
-            int rowLength = this.binaryDiagnostics.Count;
-            int columnLength = this.binaryDiagnostics[0].Length;
-            char[,] binaryDiagnosticsMatrix = new char[rowLength, columnLength];
-
-            for (int i = 0; i < binaryDiagnostics.Count; i++)
-            {
-                char[] splitBinaryNum = binaryDiagnostics[i].ToCharArray();
-                PopulateRow(binaryDiagnosticsMatrix, i, columnLength, splitBinaryNum);
-            }
+            char[,] binaryDiagnosticsMatrix = MatrixHelper.BuildCharacterMatrix(binaryDiagnostics);
 
             StringBuilder gamma = new StringBuilder();
             StringBuilder epsilon = new StringBuilder();
 
             int zeroCount = 0;
             int oneCount = 0;
+           
 
-            for (int i = 0; i < columnLength; i++)
+            for (int i = 0; i < this.columnLength; i++)
             {
-                for (int j = 0; j < rowLength; j++)
+                for (int j = 0; j < this.rowLength; j++)
                 {
                     char currentVal = binaryDiagnosticsMatrix[j, i];
 
@@ -66,28 +66,5 @@
 
             return powerConsumption;
         }
-
-
-        private void PopulateRow(char[,] matrix, int rowNumber, int numberOfColumns, char[] binaryNum)
-        {
-            for (int i = 0; i < numberOfColumns; i++)
-            {
-                matrix[rowNumber,i] = binaryNum[i];
-            }
-        }
-
-        private void PrintMatrix(char[,] matrix, int rowLength, int columnLength)
-        {
-            for (int i = 0; i < rowLength; i++)
-            {
-                for (int j = 0; j < columnLength; j++)
-                {
-                    Console.Write(matrix[i, j] + " ");
-                }
-
-                Console.WriteLine();
-            }
-        }
-
     }
 }
