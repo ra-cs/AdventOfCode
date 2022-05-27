@@ -4,6 +4,7 @@
     using AdventOfCode.Day1;
     using AdventOfCode.Day2;
     using AdventOfCode.Day3;
+    using AdventOfCode.ErrorHandling;
 
     internal class Program
     {
@@ -18,53 +19,18 @@
             switch (day)
             {
                 case Constants.ONE:
-                    if (puzzleNumber.Equals(Constants.ONE))
-                    {
-                        Day1Controller.Day1Puzzle1();
-                    }
-                    else if (puzzleNumber.Equals(Constants.TWO))
-                    {
-                        Day1Controller.Day1Puzzle2();
-                    }
-                    else
-                    {
-                        PrintInvalidInputErrorMessage();
-                    }
-
+                    Day1Controller.Day1Handler(puzzleNumber);
                     break;
                 case Constants.TWO:
-                    if (puzzleNumber.Equals(Constants.ONE))
-                    {
-                        Day2Controller.Day2Puzzle1();
-                    }
-                    else if (puzzleNumber.Equals(Constants.TWO))
-                    {
-                        Day2Controller.Day2Puzzle2();
-                    }
-                    else
-                    {
-                        PrintInvalidInputErrorMessage();
-                    }
-
+                    Day2Controller.Day2Handler(puzzleNumber);
                     break;
                 case Constants.THREE:
-                    if (puzzleNumber.Equals(Constants.ONE))
-                    {
-                        Day3Controller.Day3Puzzle1();
-                    }
-                    else
-                    {
-                        PrintInvalidInputErrorMessage();
-                    }
-
+                    Day3Controller.Day3Handler(puzzleNumber);
                     break;
                 default:
-                    PrintInvalidInputErrorMessage();
+                    ErrorMessages.PrintInvalidInputErrorMessage();
                     break;
             }
-
         }
-
-        private static void PrintInvalidInputErrorMessage() => Console.WriteLine(Constants.INVALID_INPUT_MESSAGE);
     }
 }

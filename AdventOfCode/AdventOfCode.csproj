@@ -14,6 +14,7 @@
     <None Remove="Resources\navigationData.txt" />
     <None Remove="Day3\" />
     <None Remove="Resources\binaryDiagnostics.txt" />
+    <None Remove="ErrorHandling\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Day1\" />
@@ -21,6 +22,7 @@
     <Folder Include="Helper\" />
     <Folder Include="Day2\" />
     <Folder Include="Day3\" />
+    <Folder Include="ErrorHandling\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\depthMeasurements.txt" />

@@ -2,10 +2,22 @@
 {
     using System;
     using System.Collections.Generic;
+    using AdventOfCode.ErrorHandling;
     using AdventOfCode.Helper;
 
     public class Day3Controller
     {
+        public static void Day3Handler(string puzzleNumber)
+        {
+            if (puzzleNumber.Equals(Constants.ONE))
+            {
+                Day3Controller.Day3Puzzle1();
+            }
+            else
+            {
+                ErrorMessages.PrintInvalidInputErrorMessage();
+            }
+        }
 
         public static void Day3Puzzle1()
         {

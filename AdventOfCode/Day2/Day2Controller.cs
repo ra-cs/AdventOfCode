@@ -2,10 +2,27 @@
 {
     using System;
     using System.Collections.Generic;
+    using AdventOfCode.ErrorHandling;
     using AdventOfCode.Helper;
 
     public static class Day2Controller
     {
+        public static void Day2Handler(string puzzleNumber)
+        {
+            if (puzzleNumber.Equals(Constants.ONE))
+            {
+                Day2Controller.Day2Puzzle1();
+            }
+            else if (puzzleNumber.Equals(Constants.TWO))
+            {
+                Day2Controller.Day2Puzzle2();
+            }
+            else
+            {
+                ErrorMessages.PrintInvalidInputErrorMessage();
+            }
+        }
+
         public static void Day2Puzzle1()
         {
             try
