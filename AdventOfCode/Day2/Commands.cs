@@ -1,10 +1,8 @@
-﻿namespace AdventOfCode.Day2
+﻿namespace AdventOfCode.Day2;
+public enum Commands
 {
-    public enum Commands
-    {
-        forward,
-        up,
-        down
-    }
+    forward,
+    up,
+    down
 }
 
